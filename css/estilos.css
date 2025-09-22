@@ -1,0 +1,473 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to top, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+}
+
+/* Contenedor general */
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 0;
+}
+
+/* Header principal */
+.header{
+    height: 100vh;
+    background-image: linear-gradient(to top, rgba(15,23,42,0.85) 0%, rgba(30,41,59,0.85) 100%), 
+                      url("../img/img1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.head{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.titulo{
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #38bdf8; /* celeste */
+}
+
+.copy{
+    font-weight: 200;
+    font-size: 22px;
+    color: #e2e8f0;
+}
+
+/* Menú hamburguesa */
+.hamburguer{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: #38bdf8; /* celeste */
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    z-index: 1000;
+}
+
+.menu-navegacion{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    background: #0f172a; /* azul oscuro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(110%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -2px 0 6px rgba(0,0,0,.5);
+    z-index: 999;
+}
+
+.menu-navegacion a{
+    color: #f1f5f9;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 15px 0;
+    transition: color 0.3s;
+}
+
+.menu-navegacion a:hover{
+    color: #38bdf8; /* efecto hover celeste */
+}
+
+.spread{
+    transform: translateX(0);
+}
+/* Subtítulos */
+.subtitulo{
+    color: #38bdf8; /* celeste */
+    font-size: 36px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* Lista de semanas */
+.lista-semanas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.lista-semanas li{
+    flex: 1 1 220px;
+    max-width: 260px;
+}
+
+.card-semana{
+    background: #1e293b; /* azul medio */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #334155;
+}
+
+.card-semana h3{
+    font-size: 22px;
+    color: #38bdf8; /* celeste */
+    margin-bottom: 10px;
+}
+
+.card-semana p{
+    font-size: 15px;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.card-semana a{
+    display: inline-block;
+    padding: 10px 15px;
+    background: #38bdf8;
+    color: #0f172a;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.card-semana a:hover{
+    background: #0ea5e9;
+    transform: scale(1.05);
+}
+
+.card-semana:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+/* ==== MODAL LOGIN ==== */
+.modal-login{
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content{
+    background: #1e293b; /* fondo oscuro */
+    padding: 35px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    animation: fadeIn 0.3s ease;
+    color: #fff;
+}
+
+.close-btn{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    color: #38bdf8;
+    cursor: pointer;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-login h2{
+    text-align: center;
+    margin-bottom: 15px;
+    color: #38bdf8;
+}
+
+.form-login input{
+    padding: 12px;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #0f172a;
+    color: #fff;
+}
+
+.form-login button{
+    background: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.form-login button:hover{
+    background: #0ea5e9;
+}
+
+/* ==== INFORMACIÓN DEL CURSO ==== */
+.info-curso {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin: 30px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    line-height: 1.6;
+    color: #e2e8f0;
+}
+
+.info-curso h2 {
+    font-size: 1.8rem;
+    color: #38bdf8;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 2px solid #38bdf8;
+    padding-bottom: 8px;
+}
+
+.info-curso h3 {
+    font-size: 1.3rem;
+    color: #0ea5e9;
+    margin-top: 20px;
+}
+
+.info-curso p {
+    font-size: 1rem;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.info-curso li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+/* ==== SEMANA ACTUAL ==== */
+.semana-actual {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.semana-actual .card-semana {
+    display: inline-block;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px 25px;
+    width: 280px;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.semana-actual .card-semana:hover {
+    transform: scale(1.05);
+}
+
+.semana-actual .card-semana h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.semana-actual .card-semana p {
+    margin-bottom: 15px;
+    color: #e2e8f0;
+}
+
+.btn-semana {
+    display: inline-block;
+    background: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+.btn-semana:hover {
+    background: #7fc3eb;
+}
+
+/* ==== FOOTER ==== */
+footer{
+    background: linear-gradient(to top, #0f172a 0%, #1e293b 100%);
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.contact-us{
+    width: 40%;
+}
+
+.brand{
+    font-weight: 600;
+    font-size: 30px;
+    color: #38bdf8;
+}
+
+.social-media{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-media-icon{
+    display: inline-block;
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #38bdf8;
+    border-radius: 50%;
+    text-align: center;
+    color: #38bdf8;
+    transition: all 0.3s;
+}
+
+.social-media-icon i{
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.social-media-icon:hover{
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+.line{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    height: 2px;
+    background: #38bdf8;
+    margin-top: 30px;
+}
+/* ==== Selector de Curso ==== */
+.selector-curso {
+  margin: 40px auto;
+  padding: 20px 25px;
+  background: #161140;              /* azul oscuro, igual que el fondo */
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  text-align: center;
+  max-width: 500px;
+}
+
+.selector-curso label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffdf8e;                   /* dorado suave como acento */
+  margin-right: 10px;
+}
+
+.selector-curso select {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid #004aad;        /* azul fuerte para consistencia */
+  border-radius: 8px;
+  background: #f9f9ff;
+  color: #161140;                   /* texto oscuro */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.selector-curso select:hover {
+  border-color: #b86e1a;            /* dorado al hover */
+  background: #eef3ff;
+}
+
+.selector-curso select:focus {
+  outline: none;
+  border-color: #004aad;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 74, 173, 0.25); /* sombra azul */
+}
+/* Logo - Unificado y limpio */
+.logo {
+    width: 60px;
+    height: auto;
+    position: absolute;
+    top: 10px;     /* separa desde arriba */
+    left: 10px;    /* separa desde la izquierda */
+    z-index: 10;   /* Asegura que esté encima de otros elementos */
+}
+
+/* Nombre del usuario al lado del logo */
+.nombre-usuario {
+    position: absolute;
+    top: 15px;     /* Ligeramente más abajo que el logo para centrar verticalmente */
+    left: 80px;    /* Después del logo (60px ancho + 10px margen) */
+    font-size: 18px;
+    font-weight: bold;
+    color: #38bdf8;   /* Color del texto (ajusta a tu tema) */
+    text-decoration: none;  /* Quita el subrayado del enlace */
+    cursor: pointer;        /* Cursor de mano al pasar el mouse */
+    z-index: 10;            /* Mismo nivel que el logo */
+    transition: color 0.3s ease;  /* Efecto suave al hover */
+}
+
+.nombre-usuario:hover {
+    color: #007bff;  /* Color al pasar el mouse (azul por defecto, ajusta) */
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .logo {
+        width: 40px;
+        left: 10px;
+    }
+    
+    .nombre-usuario {
+        left: 60px;    /* Ajustado para el logo más pequeño */
+        font-size: 16px;  /* Texto más pequeño en móvil */
+        top: 12px;     /* Ajuste vertical */
+    }
+}
+
+/* Si el header es responsive, asegúrate de que .head tenga position: relative */
+.head {
+    position: relative;  /* Necesario para que los absolute se posicionen respecto a este contenedor */
+    padding-left: 60px; /* Espacio extra a la izquierda para logo + nombre (ajusta si es necesario) */
+    min-height: 60px;    /* Altura mínima para que quepan logo y nombre */
+}
